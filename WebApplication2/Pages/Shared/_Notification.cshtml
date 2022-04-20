@@ -1,0 +1,19 @@
+﻿@if (TempData["Message"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" rel="stylesheet" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["Message"]', 'Success', {timeOut: 3000});
+    </script>
+}
+
+@if (TempData["Error"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" rel="stylesheet" media="all">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.error('@TempData["Error"]', 'Error', {timeOut: 3000});
+    </script>
+}

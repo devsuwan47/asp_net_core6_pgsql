@@ -1,0 +1,38 @@
+﻿@page
+@model WebApplication2.Pages.Categories.EditModel
+
+
+<form method="post">
+    <input type="hidden" asp-for="Category.Id"/>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Update Category</h2>
+        </div>
+
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <div class="form-group">
+                <label asp-for="Category.Name"></label>
+                <input type="text" class="form-control" asp-for="Category.Name" />
+                <span asp-validation-for="Category.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="form-group">
+                <label asp-for="Category.DisplayOrder"></label>
+                <input type="text" class="form-control" asp-for="Category.DisplayOrder" />
+                <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+            </div>
+        </div>
+        <p></p>
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-page="Category" class="btn btn-secondary" style="width:150px;">Back to list</a>        
+    </div>
+
+</form>
+
+@section Scripts{
+ @{
+    //<partial name="_ValidationScriptsPartial" />
+ }
+}
